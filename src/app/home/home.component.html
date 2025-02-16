@@ -1,0 +1,45 @@
+<div class="main-content">
+  <div class="greeting-message">
+    <p class="bg-warning text-center fw-bold text-dark m-0">
+      Welcome to AI Interviwer
+    </p>
+  </div>
+  <div class="choices mx-5 pt-5 pb-5" *ngIf="show_content">
+    <!-- Choose topic feature  -->
+    <div
+      class="topic-choice home-card d-flex align-items-center justify-content-center"
+      (click)="handleChooseTopicComponent()"
+    >
+      <div class="text-center">
+        <img src="images/topic.gif" height="300px" width="400px" />
+        <p class="mt-2 fw-bold">Choose topic and start you Interview</p>
+      </div>
+    </div>
+    <!-- manually add questions  -->
+    <div
+      class="mannually-choice home-card d-flex align-items-center justify-content-center"
+      (click)="handleManuallyComponent()"
+    >
+      <div class="text-center">
+        <img src="images/questions.gif" height="300px" width="400px" class="" />
+        <p class="mt-2 fw-bold">Mannually Add questions start you Interview</p>
+      </div>
+    </div>
+    <!-- file upload feature  -->
+    <div
+      class="upload-file-choice home-card d-flex align-items-center justify-content-center"
+      (click)="handleUploadFileComponent()"
+    >
+      <div class="text-center">
+        <img src="images/upload-file.gif" height="300px" width="400px" />
+        <p class="mt-2 fw-bold">Upload pdf file and start you Interview</p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="show_file_upload_content">
+    <app-upload-file></app-upload-file>
+  </div>
+  <div *ngIf="show_manually_add_content">
+    <app-manually-add-questions></app-manually-add-questions>
+  </div>
+</div>
