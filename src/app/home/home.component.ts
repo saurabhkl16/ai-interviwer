@@ -33,7 +33,7 @@ export class HomeComponent {
     this.service.hideManuallyComponent();
     this.service.show_choose_topic_content.set(false);
     // this.service.show_file_upload_content.set(true);
-    alert('wrking on it, Comming soon..!');
+    alert('Working on this feature , Comming soon..!');
     this.whenOpenHomeComponent();
   }
 
