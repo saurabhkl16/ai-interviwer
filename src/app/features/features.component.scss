@@ -1,0 +1,12 @@
+.container {
+  background-color: rgb(197, 198, 197);
+}
+
+.feature-img {
+  height: 150px; /* Set a fixed height */
+  object-fit: cover; /* Ensures aspect ratio is maintained */
+  width: auto; /* Keep the width auto to maintain image aspect ratio */
+}
+
+.feature-page-card {
+}

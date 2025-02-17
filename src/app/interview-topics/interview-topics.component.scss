@@ -1,0 +1,15 @@
+.interview-topic {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 5%;
+  row-gap: 10%;
+
+  .card {
+    min-height: 250px;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+}

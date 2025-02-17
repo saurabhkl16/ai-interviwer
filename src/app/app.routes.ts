@@ -6,10 +6,11 @@ import { FeaturesComponent } from './features/features.component';
 import { AboutComponent } from './about/about.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'upload-file', component: UploadFileComponent },
   { path: 'manually', component: ManuallyAddQuestionsComponent },
   { path: 'features', component: FeaturesComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'interview-topics', component: AboutComponent },
 ];

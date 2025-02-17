@@ -22,13 +22,13 @@ import { HomeComponent } from './home/home.component';
 })
 export class AppComponent {
   title = 'ai-interviwer';
-  public show_content: boolean = true;
+  public show_home_content: boolean = true;
   public show_file_upload_content: boolean = false;
   public show_manually_add_content: boolean = false;
   public show_choose_topic__content: boolean = false;
 
   public handleUploadFileComponent() {
-    this.show_content = false;
+    this.show_home_content = false;
     this.show_manually_add_content = false;
     this.show_choose_topic__content = false;
     this.show_file_upload_content = true;
@@ -36,14 +36,14 @@ export class AppComponent {
 
   public handleManuallyComponent() {
     this.show_file_upload_content = false;
-    this.show_content = false;
+    this.show_home_content = false;
     this.show_choose_topic__content = false;
     this.show_manually_add_content = true;
   }
 
   public handleChooseTopicComponent() {
     this.show_file_upload_content = false;
-    this.show_content = false;
+    this.show_home_content = false;
     this.show_manually_add_content = false;
     this.show_choose_topic__content = true;
   }

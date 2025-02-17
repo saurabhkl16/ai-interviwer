@@ -1,6 +1,9 @@
 .main-content {
   background-color: rgb(197, 198, 197);
-  flex: 1; /* Pushes footer down */
+  height: 100%;
+
+  .greeting-message {
+  }
 
   .choices {
     display: grid;

@@ -1,13 +1,22 @@
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  height: 100%; /* Set full height for body */
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full height */
+  height: 100%; /* Make sure the container takes full height of the screen */
+}
+
+.middle-content {
+  background-color: rgb(197, 198, 197);
+  min-height: 100%;
+}
+
+.footer {
+  // margin-top: auto;
 }

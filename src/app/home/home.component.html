@@ -4,7 +4,7 @@
       Welcome to AI Interviwer
     </p>
   </div>
-  <div class="choices mx-5 pt-5 pb-5" *ngIf="show_content">
+  <div class="choices mx-5 pt-5 pb-5" *ngIf="service.show_home_content()">
     <!-- Choose topic feature  -->
     <div
       class="topic-choice home-card d-flex align-items-center justify-content-center"
@@ -12,7 +12,7 @@
     >
       <div class="text-center">
         <img src="images/topic.gif" height="300px" width="400px" />
-        <p class="mt-2 fw-bold">Choose topic and start you Interview</p>
+        <p class="mt-2 fw-bold">Choose Programming Language</p>
       </div>
     </div>
     <!-- manually add questions  -->
@@ -22,7 +22,7 @@
     >
       <div class="text-center">
         <img src="images/questions.gif" height="300px" width="400px" class="" />
-        <p class="mt-2 fw-bold">Mannually Add questions start you Interview</p>
+        <p class="mt-2 fw-bold">Add Questions Mannually</p>
       </div>
     </div>
     <!-- file upload feature  -->
@@ -32,14 +32,20 @@
     >
       <div class="text-center">
         <img src="images/upload-file.gif" height="300px" width="400px" />
-        <p class="mt-2 fw-bold">Upload pdf file and start you Interview</p>
+        <p class="mt-2 fw-bold">Upload pdf file to start Interview</p>
       </div>
     </div>
   </div>
-  <div *ngIf="show_file_upload_content">
+  <div *ngIf="service.show_file_upload_content()" class="ms-5 me-5 mt-4">
     <app-upload-file></app-upload-file>
   </div>
-  <div *ngIf="show_manually_add_content">
+  <div *ngIf="this.service.showManuallyAddContent()" class="ms-5 me-5 mt-4">
     <app-manually-add-questions></app-manually-add-questions>
+  </div>
+  <div *ngIf="service.show_choose_topic_content()" class="ms-5 me-5 mt-4">
+    <app-interview-topics></app-interview-topics>
+  </div>
+  <div *ngIf="service.startInterwalComp()" class="ms-5 me-5 mt-4">
+    <app-meeting></app-meeting>
   </div>
 </div>

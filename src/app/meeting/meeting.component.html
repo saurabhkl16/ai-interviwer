@@ -1,0 +1,36 @@
+<div class="meeting mt-5">
+  <div class="particepents">
+    <div class="interviwer card">
+      <img src="images/people.png" height="200px" width="200px" />
+    </div>
+    <div class="student card">
+      <div class="student-camera">
+        <video #studentVideo autoplay *ngIf="showCameraElement"></video>
+        <img
+          src="images/people.png"
+          height="200px"
+          width="200px"
+          *ngIf="!showCameraElement"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="meeting-buttons mt-4">
+    <button class="btn btn-dark me-3" (click)="startInterview()">Ready</button>
+    <button class="btn btn-dark camera me-3" (click)="toggleCamera()">
+      {{ cameraOn ? "Turn Off Camera" : "Turn On Camera" }}
+    </button>
+    <button class="btn btn-dark me-3" (click)="previousQuestion()">
+      <i class="bi bi-arrow-left"></i>Previous
+    </button>
+    <button class="btn btn-dark me-3" (click)="stopInterview()">
+      <i class="bi bi-stop-fill"></i>Stop
+    </button>
+    <button class="btn btn-dark me-3" (click)="nextQuestion()">
+      Next<i class="bi bi-arrow-right"></i>
+    </button>
+    <!-- <button class="btn btn-danger me-3" (click)="toggleRecording()">
+      {{ recording ? "Stop & Save Recording" : "Start Recording" }}
+    </button> -->
+  </div>
+</div>

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from '../footer/footer.component';
-import { NavebarComponent } from '../navebar/navebar.component';
 import { RouterModule } from '@angular/router';
 import { ManuallyAddQuestionsComponent } from '../manually-add-questions/manually-add-questions.component';
 import { UploadFileComponent } from '../upload-file/upload-file.component';
 import { CommonModule } from '@angular/common';
+import { InterviewTopicsComponent } from '../interview-topics/interview-topics.component';
+import { AppServiceService } from '../app-service.service';
+import { MeetingComponent } from '../meeting/meeting.component';
 
 @Component({
   selector: 'app-home',
@@ -12,37 +13,49 @@ import { CommonModule } from '@angular/common';
     RouterModule,
     ManuallyAddQuestionsComponent,
     UploadFileComponent,
+    InterviewTopicsComponent,
     CommonModule,
+    MeetingComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
 })
 export class HomeComponent {
-  
-  public show_content: boolean = true;
-  public show_file_upload_content: boolean = false;
-  public show_manually_add_content: boolean = false;
-  public show_choose_topic__content: boolean = false;
+  constructor(public service: AppServiceService) {}
+
+  ngOnInit() {
+    this.whenOpenHomeComponent();
+  }
 
   public handleUploadFileComponent() {
-    this.show_content = false;
-    this.show_manually_add_content = false;
-    this.show_choose_topic__content = false;
-    this.show_file_upload_content = true;
+    this.service.show_home_content.set(false);
+    this.service.hideManuallyComponent();
+    this.service.show_choose_topic_content.set(false);
+    // this.service.show_file_upload_content.set(true);
+    alert('wrking on it, Comming soon..!');
+    this.whenOpenHomeComponent();
   }
 
   public handleManuallyComponent() {
-    this.show_file_upload_content = false;
-    this.show_content = false;
-    this.show_choose_topic__content = false;
-    this.show_manually_add_content = true;
+    this.service.show_file_upload_content.set(false);
+    this.service.show_home_content.set(false);
+    this.service.show_choose_topic_content.set(false);
+    this.service.showManuallyComponent();
   }
 
   public handleChooseTopicComponent() {
-    this.show_file_upload_content = false;
-    this.show_content = false;
-    this.show_manually_add_content = false;
-    this.show_choose_topic__content = true;
+    this.service.show_file_upload_content.set(false);
+    this.service.show_home_content.set(false);
+    this.service.hideManuallyComponent();
+    this.service.show_choose_topic_content.set(true);
+  }
+
+  public whenOpenHomeComponent() {
+    this.service.show_home_content.set(true);
+    this.service.hideManuallyComponent();
+    this.service.show_choose_topic_content.set(false);
+    this.service.show_file_upload_content.set(false);
+    this.service.stopInterview();
   }
 }
