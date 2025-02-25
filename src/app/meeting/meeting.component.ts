@@ -51,7 +51,7 @@ export class MeetingComponent {
     try {
       this.stream = await navigator.mediaDevices.getUserMedia({
         video: true,
-        audio: true,
+        // audio: true,
       });
       this.studentVideo.nativeElement.srcObject = this.stream;
       this.cameraOn = true;
